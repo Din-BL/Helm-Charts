@@ -1,0 +1,34 @@
+app:
+  label: weather-app
+
+deployment:
+  name: weather-app-deployment
+  replicas: 2
+
+image:
+  repository: dinbl/weather_app
+  tag: latest
+  containerPort: 5000
+  pullSecret: weather-app-dockerhub-secret
+
+service:
+  name: weather-app-service
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000
+  
+secrets:
+  dockerhub:
+    username: dinbl
+    password: p2hSkKhH5cWKLC
+    email: dinz5005@gmail.com
+
+serviceAccount:
+  create: false
+
+ingress:
+  create: false
+
+autoscaling:
+  enabled: false
+
