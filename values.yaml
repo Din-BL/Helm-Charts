@@ -7,7 +7,7 @@ deployment:
 
 image:
   repository: dinbl/weather_app
-  tag: v1.0.33
+  tag: v1.0.34
   containerPort: 5000
   pullSecret: weather-app-dockerhub-secret
 
